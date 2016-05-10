@@ -1,4 +1,4 @@
-# -- Section 1
+-- Section 1
 --
 -- Revision of concepts that we've learnt in SQL today
 --
@@ -12,8 +12,7 @@ SELECT name FROM shows WHERE price < 15;
 
 -- Insert a user with the name "Val Gibson" into the users table.
 
-INSERT INTO users (name) VALUES ('Valerie Gibson');
-    -- Valerie is already in the table so adding her again can cause problems in later queries
+INSERT INTO users (name) VALUES ('Val Gibson');
 
 -- Select the id of the user with your name.
 
@@ -21,11 +20,11 @@ SELECT id FROM users WHERE name = 'Harry Swan';
 
 -- Insert a record that Val Gibson wants to attend the show "Two girls, one cup of comedy".
 
-INSERT INTO shows_users (show_id, user_id) VALUES ((SELECT id FROM shows WHERE name = 'Two girls, one cup of comedy'), (SELECT id FROM users WHERE name = 'Valerie Gibson'));
+INSERT INTO shows_users (show_id, user_id) VALUES ((SELECT id FROM shows WHERE name = 'Two girls, one cup of comedy'), (SELECT id FROM users WHERE name = 'Val Gibson'));
 
 -- Updates the name of the "Val Gibson" user to be "Valerie Gibson".
 
-UPDATE users SET name = 'Val Gibson' WHERE name = 'Valerie Gibson';
+UPDATE users SET name = 'Valerie Gibson' WHERE name = 'Val Gibson';
 
 -- Deletes the user with the name 'Valerie Gibson'.
 
